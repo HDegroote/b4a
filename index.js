@@ -11,7 +11,9 @@ function alloc (size, fill, encoding) {
 }
 
 function allocUnsafe (size) {
-  return Buffer.allocUnsafe(size)
+  // This is a hack for a quick test on the difference between allocUnsafe and alloc
+  // Obviously should not be merged
+  return Buffer.alloc(size)
 }
 
 function allocUnsafeSlow (size) {
